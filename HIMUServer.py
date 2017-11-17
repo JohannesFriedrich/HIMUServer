@@ -57,7 +57,7 @@ class HIMUServer:
 		Print raw data received (UDP)
 		'''
 		UDPSocket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)	
-		UDPSocket.settimeout(timeout)
+		UDPSocket.settimeout(self.timeout)
 		serverAddress = ('', port)
 		print('Listening on port ' + str(port))
 		UDPSocket.bind(serverAddress)
@@ -185,5 +185,5 @@ class HIMUServer:
 			print(str(ex))
 			
 	def stop(self ):
-		self.go = false
+		self.go = False
 		
